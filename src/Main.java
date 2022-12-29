@@ -49,7 +49,7 @@ public class Main {
 
         // task 5
         System.out.println("Задача 5");
-        int childAge = 16;
+        int childAge = 10;
         if (childAge < 5) {
             System.out.println("Если возраст ребенка равен " + childAge + ", то ему нельзя кататься на аттракционе");
         }
@@ -65,16 +65,17 @@ public class Main {
         int totalPlaceCapacity = 102;
         int sittingPlace = 60;
         int standingPlace = totalPlaceCapacity - sittingPlace;
-        int usedSitting = 60;
-        int usedStanding = 39;
+        int usedSitting = 43;
+        int usedStanding = 22;
         int freeSittingPlace = sittingPlace - usedSitting;
         int freeStandingPlace = standingPlace - usedStanding;
-        if (freeSittingPlace > 0) {
-            System.out.println("Есть сидячие места в вагоне, количество свободных сидячих мест: " + freeSittingPlace);
-        } else if (freeStandingPlace > 0) {
+        if (freeSittingPlace > 0 && freeStandingPlace > 0) {
+            System.out.println("Есть свободные сидячие и стоячие места в вагоне, количество свободных сидячих мест: " + freeSittingPlace + ", количество свободных стоячих мест: " + freeStandingPlace);
+        } else if (freeSittingPlace == 0 && freeStandingPlace > 0) {
             System.out.println("Есть стоячие места в вагоне, количество свободных стоячих мест: " + freeStandingPlace);
-        } else {
-            System.out.println("В вагоне нет свободных стоячих и сидячих мест");
+        } else if (freeStandingPlace == 0 && freeSittingPlace > 0) {
+            System.out.println("Есть сидячие места в вагоне, количество свободных сидячих мест: " + freeSittingPlace);
+        } else {System.out.println("В вагоне нет свободных стоячих и сидячих мест");
         }
 
         // task 7
